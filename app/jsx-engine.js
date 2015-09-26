@@ -10,8 +10,8 @@ function clearRequireCache() {
 export default function(componentPath, options, callback) {
     let layoutPath = path.join(this.root, 'layout.jsx');
 
-    let LayoutClass = require(layoutPath);
-    let ComponentClass = require(componentPath);
+    const LayoutClass = require(layoutPath);
+    const ComponentClass = require(componentPath);
 
     if (!options.cache) {
         clearRequireCache();
