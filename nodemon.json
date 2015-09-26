@@ -1,0 +1,13 @@
+{
+    "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "artus"
+    },
+    "ignore": [
+        "app/views"
+    ],
+    "watch": [
+        "./index.js",
+        "app"
+    ]
+}
