@@ -1,10 +1,14 @@
 import React from 'react';
 
+import ArticleListComponent from '../components/article/List';
+
 class HomePage extends React.Component {
 
     render() {
         return (
-            <p>hello</p>
+            <ArticleListComponent
+                articles={this.props.articles}
+            />
         );
     }
 
