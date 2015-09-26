@@ -13,9 +13,9 @@ export default {
     },
 
     '/article/:id': function(id) {
-        api.get('/articles')
+        api.get(`/article/${id}`)
            .end((err, res) => {
-            let article = res.body.find( a => (a.id === id) );
+            let article = res.body;
 
             renderer.call(this, 'page/article', {
                 title: article.title,
