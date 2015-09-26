@@ -3,8 +3,12 @@ import React from 'react';
 class ArticleListItem extends React.Component {
 
     render() {
+        let href = `/article/${this.props.article.id}`;
+
         return (
-            <strong>{this.props.article.title}</strong>
+            <a href={href}>
+                {this.props.article.title}
+            </a>
         );
     }
 

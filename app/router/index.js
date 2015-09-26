@@ -13,4 +13,15 @@ export default function(app) {
             }
         });
     });
+
+    app.get('/article/:id', function(req, res) {
+        let article = articles.find( a => (a.id === req.params.id) );
+
+        res.render('page/article', {
+            title: article.title,
+            props: {
+                article: article
+            }
+        });
+    });
 }
