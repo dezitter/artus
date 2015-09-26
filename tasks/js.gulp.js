@@ -1,6 +1,7 @@
 import browserify from 'browserify';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
+import livereload from 'gulp-livereload';
 import path from 'path';
 import source from 'vinyl-source-stream';
 import watchify from 'watchify';
@@ -38,9 +39,13 @@ gulp.task('watch:js', () => {
     let bundle = browserify(paths.js_src_file, options);
     let watcher = watchify(bundle);
 
+    livereload.listen();
+
     watcher
         .on('log', gutil.log)
-        .on('update', () => writeBundle(bundle));
+        .on('update', () => {
+            writeBundle(bundle).pipe(livereload());
+        });
 
     return writeBundle(bundle);
 });
