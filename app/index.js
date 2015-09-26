@@ -7,8 +7,8 @@ import jsxEngine from './jsx-engine';
 import router from './router';
 import routerMiddleware from './router/middleware';
 
-const PORT = process.env.PORT || 3000;
-const API_PORT = process.env.API_PORT || 3001;
+const PORT = process.env.PORT;
+const API_PORT = process.env.API_PORT;
 
 let app = express();
 let debug = Debug('artus');

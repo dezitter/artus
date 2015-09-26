@@ -9,5 +9,6 @@ Install [Node.js](https://nodejs.org)
 ```shell
 $ cd artus/
 $ npm install
+$ cp .env.example .env
 $ npm run start
 ```

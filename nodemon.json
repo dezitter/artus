@@ -9,6 +9,7 @@
     ],
     "watch": [
         "./index.js",
+        ".env",
         "app",
         "lib"
     ]
