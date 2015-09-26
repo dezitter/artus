@@ -4,7 +4,8 @@
         "DEBUG": "artus"
     },
     "ignore": [
-        "app/views"
+        "app/views",
+        "app/public/js"
     ],
     "watch": [
         "./index.js",

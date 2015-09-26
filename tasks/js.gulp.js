@@ -3,15 +3,14 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import path from 'path';
 import source from 'vinyl-source-stream';
+import watchify from 'watchify';
 
 import paths from './paths';
 import pkg from '../package.json';
 
-function bundle() {
+function writeBundle(b) {
     let js_dest_dir = path.dirname(paths.js_dest_file);
     let js_dest_filename = path.basename(paths.js_dest_file);
-
-    let b = browserify(paths.js_src_file, pkg.browserify);
 
     return b.bundle()
         .on('error', onBundleError)
@@ -28,5 +27,20 @@ function onBundleError(error) {
 }
 
 gulp.task('js', () => {
-    return bundle();
+    let bundle = browserify(paths.js_src_file, pkg.browserify);
+
+    return writeBundle(bundle);
+});
+
+gulp.task('watch:js', () => {
+    let options = Object.assign({ debug: true }, pkg.browserify);
+
+    let bundle = browserify(paths.js_src_file, options);
+    let watcher = watchify(bundle);
+
+    watcher
+        .on('log', gutil.log)
+        .on('update', () => writeBundle(bundle));
+
+    return writeBundle(bundle);
 });
