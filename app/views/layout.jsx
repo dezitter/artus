@@ -15,6 +15,7 @@ class LayoutComponent extends React.Component {
                     <div
                         dangerouslySetInnerHTML={ {__html: this.props.content} }>
                     </div>
+                    <script src="/js/bundle.js"></script>
                 </body>
             </html>
         );

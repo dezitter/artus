@@ -4,7 +4,8 @@
   "description": "A simple web-based application to save articles and read them later",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run build && node index.js",
+    "build": "gulp build",
     "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,10 +18,12 @@
   "license": "MIT",
   "dependencies": {
     "babel": "^5.8.23",
+    "browserify": "^11.2.0",
     "debug": "^2.2.0",
     "director": "^1.2.8",
     "express": "^4.13.3",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

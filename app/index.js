@@ -15,6 +15,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine);
 
+app.use( express.static(__dirname + '/../dist') );
 app.use( routerMiddleware(router) );
 
 app.listen(PORT, () => debug(`Server listening on port ${PORT}`));
