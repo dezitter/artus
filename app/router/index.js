@@ -1,8 +1,10 @@
+import director from 'director';
 import routes from '../routes';
 
-export default function(app) {
-    Object.keys(routes)
-        .forEach((pattern) => {
-            app.get(pattern, routes[pattern]);
-        });
-}
+let _routes = {};
+Object.keys(routes)
+    .forEach((pattern) => {
+        _routes[pattern] = { get: routes[pattern] };
+    });
+
+export default new director.http.Router(_routes);

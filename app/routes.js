@@ -1,3 +1,5 @@
+import renderer from './router/renderer';
+
 let articles = [
     { id: '89d8073b', title: 'foo', content: 'Lorem Ipsum...' },
     { id: '5a179a7e', title: 'bar', content: 'Lorem Ipsum...' },
@@ -5,8 +7,8 @@ let articles = [
 ];
 
 export default {
-    '/': function(req, res) {
-        res.render('page/home', {
+    '/': function() {
+        renderer.call(this, 'page/home', {
             title: 'Home',
             props: {
                 articles: articles
@@ -14,10 +16,10 @@ export default {
         });
     },
 
-    '/article/:id': function(req, res) {
-        let article = articles.find( a => (a.id === req.params.id) );
+    '/article/:id': function(id) {
+        let article = articles.find( a => (a.id === id) );
 
-        res.render('page/article', {
+        renderer.call(this, 'page/article', {
             title: article.title,
             props: {
                 article: article
@@ -25,4 +27,3 @@ export default {
         });
     }
 }
-

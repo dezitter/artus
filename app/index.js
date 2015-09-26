@@ -3,6 +3,7 @@ import Debug from 'debug';
 
 import jsxEngine from './jsx-engine';
 import router from './router';
+import routerMiddleware from './router/middleware';
 
 const PORT = process.env.PORT || 3000;
 
@@ -14,6 +15,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine);
 
-router(app);
+app.use( routerMiddleware(router) );
 
 app.listen(PORT, () => debug(`Server listening on port ${PORT}`));
