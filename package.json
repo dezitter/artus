@@ -1,0 +1,22 @@
+{
+  "name": "artus",
+  "version": "1.0.0",
+  "description": "A simple web-based application to save articles and read them later",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "read",
+    "article",
+    "isomorphic"
+  ],
+  "author": "Laurent Dezitter <laurent.dezitter@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "debug": "^2.2.0",
+    "express": "^4.13.3"
+  }
+}
