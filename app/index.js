@@ -2,6 +2,7 @@ import express from 'express';
 import Debug from 'debug';
 
 import jsxEngine from './jsx-engine';
+import router from './router';
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,10 +14,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine);
 
-app.get('/', function(req,res) {
-    res.render('page/home', {
-        title: 'Home'
-    });
-});
+router(app);
 
 app.listen(PORT, () => debug(`Server listening on port ${PORT}`));
