@@ -8,7 +8,7 @@
 [x] readability parser API support
 [x] add flux store/action (use altjs)
 [ ] limit home page articles list length
-[ ] sort home page articles list by adte_added
+[x] sort home page articles list by adte_added
 [ ] exclude article content from /articles listing
 [ ] hand off store's state from server to client
 [ ] basic styling using purecss
