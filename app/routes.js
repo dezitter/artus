@@ -4,7 +4,7 @@ import ArticleActions from './alt/actions/Article';
 
 export default {
     '/': function() {
-        ArticleActions.fetch()
+        ArticleActions.fetch({ limit: 10 })
             .then((articles) => {
                 renderer.call(this, 'page/home', {
                     title: 'Home',
@@ -21,5 +21,15 @@ export default {
                     props: { article: article }
                 });
            });
+    },
+
+    '/articles': function() {
+        ArticleActions.fetch()
+            .then((articles) => {
+                renderer.call(this, 'page/articles', {
+                    title: 'Articles',
+                    props: { articles: articles }
+                });
+            });
     }
 };

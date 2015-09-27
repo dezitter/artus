@@ -12,7 +12,7 @@ class ArticleActions {
         return api.del(`/article/${payload._id}`);
     }
 
-    fetch(payload={ limit: 10 }) {
+    fetch(payload={}) {
         return api.get('/articles')
                   .query({ limit: payload.limit });
     }
