@@ -1,10 +1,11 @@
 - [x] delete article
 - [x] listing all articles
- - [ ] with pagination
+ - [x] with pagination
  - [ ] searchable (search within title, url)
+- [ ] basic styling using purecss
+- [ ] add a menu
 - [ ] refactor home & articles pages
 - [ ] hand off store's state from server to client
-- [ ] basic styling using purecss
 - [ ] offline support
 
 - [ ] follow airbnb/javascript styleguide

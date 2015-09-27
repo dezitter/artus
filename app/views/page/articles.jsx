@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ArticleListComponent from '../components/article/List';
+import PaginatedArticleListComponent from '../components/article/PaginatedList';
 import ArticleStore from '../../alt/stores/Article';
 
 class HomePage extends React.Component {
@@ -23,7 +23,8 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <ArticleListComponent
+                <PaginatedArticleListComponent
+                    limit={10}
                     articles={this.state.articles}
                 />
             </div>
