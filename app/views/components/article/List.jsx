@@ -8,7 +8,7 @@ class ArticleList extends React.Component {
         let items = this.props.articles.map(function(article) {
             return (
                 <ArticleListItemComponent
-                    key={article.id}
+                    key={article._id}
                     article={article}
                 />
             );
