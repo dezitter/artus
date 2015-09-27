@@ -6,7 +6,8 @@
 [x] remove hardcoded fake articles list
 [x] fix click hijacker (ctrl/shift/meta + click broken, nested elements not supported, bypass needed for external links)
 [ ] readability parser API support
-[ ] add flux store/action (use altjs)
+[x] add flux store/action (use altjs)
+[ ] hand off store's state from server to client
 [ ] basic styling using purecss
 
 [ ] follow airbnb/javascript styleguide

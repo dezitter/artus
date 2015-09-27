@@ -1,25 +1,30 @@
 import React from 'react';
 
-import api from '../../api';
 import AddArticleForm from '../components/article/form/Add';
 import ArticleListComponent from '../components/article/List';
+import ArticleStore from '../../alt/stores/Article';
 
 class HomePage extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            articles: [...this.props.articles]
-        };
+        this.state = ArticleStore.getState();
+        this.onStoreChange = this.onStoreChange.bind(this);
+    }
+
+    componentDidMount() {
+        ArticleStore.listen(this.onStoreChange);
+    }
+
+    componentWillUnmount() {
+        ArticleStore.unlisten(this.onStoreChange);
     }
 
     render() {
         return (
             <div>
-                <AddArticleForm
-                    handleAddArticle={this.handleAddArticle.bind(this)}
-                />
+                <AddArticleForm />
 
                 <ArticleListComponent
                     articles={this.state.articles}
@@ -28,16 +33,8 @@ class HomePage extends React.Component {
         );
     }
 
-    handleAddArticle(url) {
-        api.post('/article')
-            .send({ url: url })
-            .end((err, res) => {
-                const articles = [...this.state.articles];
-
-                articles.unshift(res.body);
-
-                this.setState({ articles: articles });
-            });
+    onStoreChange() {
+        this.setState( ArticleStore.getState() );
     }
 
 }

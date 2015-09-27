@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ArticleActions from '../../../../alt/actions/Article';
+
 class AddArticleForm extends React.Component {
 
     render() {
@@ -17,7 +19,9 @@ class AddArticleForm extends React.Component {
         const value = input.value.trim();
 
         if (value) {
-            this.props.handleAddArticle(value);
+            ArticleActions.add({
+                url: value
+            });
         }
 
         input.value = '';
