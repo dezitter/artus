@@ -8,6 +8,10 @@ class ArticleActions {
                   .send({ url: payload.url });
     }
 
+    del(payload) {
+        return api.del(`/article/${payload._id}`);
+    }
+
     fetch(payload={ limit: 10 }) {
         return api.get('/articles')
                   .query({ limit: payload.limit });

@@ -1,4 +1,4 @@
-- [ ] delete article
+- [x] delete article
 - [ ] listing all articles
  - [ ] with pagination
  - [ ] searchable (search within title, url)

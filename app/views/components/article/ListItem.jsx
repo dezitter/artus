@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ArticleToolsComponent from './Tools';
+
 class ArticleListItem extends React.Component {
 
     render() {
@@ -10,6 +12,8 @@ class ArticleListItem extends React.Component {
                 <a href={href}>
                     {this.props.article.title || 'Untitled'}
                 </a>
+                <ArticleToolsComponent
+                    article={this.props.article} />
             </div>
         );
     }

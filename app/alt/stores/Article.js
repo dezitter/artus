@@ -9,6 +9,7 @@ class ArticleStore {
 
         this.bindListeners({
             handleAddArticle: ArticleActions.ADD,
+            handleDelArticle: ArticleActions.DEL,
             handleFetchArticles: ArticleActions.FETCH,
             handleGetArticle: ArticleActions.GET
         });
@@ -16,6 +17,15 @@ class ArticleStore {
 
     handleAddArticle(article) {
         this.articles = [article].concat(this.articles);
+    }
+
+    handleDelArticle(article) {
+        const articles = [...this.articles];
+        const index = articles.find(a => (a._id === article._id));
+
+        articles.splice(index, 1);
+
+        this.articles = articles;
     }
 
     handleFetchArticles(articles) {
