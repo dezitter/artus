@@ -8,12 +8,16 @@ class ArticleListItem extends React.Component {
         let href = `/article/${this.props.article._id}`;
 
         return (
-            <div>
-                <a href={href}>
-                    {this.props.article.title || 'Untitled'}
-                </a>
-                <ArticleToolsComponent
-                    article={this.props.article} />
+            <div className="pure-g">
+                <div className="pure-u-4-5">
+                    <a href={href}>
+                        {this.props.article.title || 'Untitled'}
+                    </a>
+                </div>
+                <div className="pure-u-1-5">
+                    <ArticleToolsComponent
+                        article={this.props.article} />
+                </div>
             </div>
         );
     }

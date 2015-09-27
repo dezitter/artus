@@ -6,9 +6,9 @@ class AddArticleForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit.bind(this)}>
+            <form className="pure-form" onSubmit={this.onSubmit.bind(this)}>
                 <input type="text" ref="urlInput" placeholder="Url..." />
-                <button type="submit">Add</button>
+                <button type="submit" className="pure-button pure-button-primary">Add</button>
             </form>
         );
     }

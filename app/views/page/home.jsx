@@ -23,7 +23,7 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="pure-u-1">
                 <AddArticleForm />
 
                 <ArticleListComponent

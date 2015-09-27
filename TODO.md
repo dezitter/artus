@@ -2,8 +2,10 @@
 - [x] listing all articles
  - [x] with pagination
  - [ ] searchable (search within title, url)
-- [ ] basic styling using purecss
+- [x] basic styling using purecss
 - [x] add a menu
+- [ ] add main stylesheet based on SCSS
+ - [ ] add SCSS watcher
 - [ ] refactor home & articles pages
 - [ ] hand off store's state from server to client
 - [ ] offline support

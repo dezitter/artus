@@ -10,6 +10,7 @@ class Pager extends React.Component {
             <div>
                 <button
                     type="button"
+                    className="pure-button"
                     disabled={isFirst}
                     onClick={this.props.handlePrevious}> Prev </button>
 
@@ -19,6 +20,7 @@ class Pager extends React.Component {
 
                 <button
                     type="button"
+                    className="pure-button"
                     disabled={isLast}
                     onClick={this.props.handleNext}> Next </button>
             </div>

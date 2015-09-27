@@ -22,7 +22,7 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="pure-u-1">
                 <PaginatedArticleListComponent
                     limit={10}
                     articles={this.state.articles}

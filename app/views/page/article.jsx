@@ -6,9 +6,11 @@ class ArticlePage extends React.Component {
 
     render() {
         return (
-            <ArticleViewComponent
-                article={this.props.article}
-            />
+            <div className="pure-u-1">
+                <ArticleViewComponent
+                    article={this.props.article}
+                />
+            </div>
         );
     }
 
