@@ -8,8 +8,9 @@ class ArticleActions {
                   .send({ url: payload.url });
     }
 
-    fetch() {
-        return api.get('/articles');
+    fetch(payload={ limit: 10 }) {
+        return api.get('/articles')
+                  .query({ limit: payload.limit });
     }
 
     get(payload) {
