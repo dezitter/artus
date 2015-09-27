@@ -1,5 +1,12 @@
 import React from 'react';
 
+import MenuComponent from './components/Menu';
+
+const MENU_ITEMS = [
+    { route: '/', label: 'Home' },
+    { route: '/articles', label: 'Articles' }
+];
+
 class LayoutComponent extends React.Component {
 
     render() {
@@ -12,6 +19,8 @@ class LayoutComponent extends React.Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                 </head>
                 <body>
+                    <MenuComponent
+                        items={MENU_ITEMS} />
                     <div
                         id="content"
                         dangerouslySetInnerHTML={ {__html: this.props.content} }>

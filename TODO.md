@@ -3,7 +3,7 @@
  - [x] with pagination
  - [ ] searchable (search within title, url)
 - [ ] basic styling using purecss
-- [ ] add a menu
+- [x] add a menu
 - [ ] refactor home & articles pages
 - [ ] hand off store's state from server to client
 - [ ] offline support
