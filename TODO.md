@@ -4,7 +4,7 @@
 [x] add database
 [x] article form to add a single article by url
 [x] remove hardcoded fake articles list
-[ ] fix click hijacker (ctrl/shift/meta + click broken, nested elements not supported, bypass needed for external links)
+[x] fix click hijacker (ctrl/shift/meta + click broken, nested elements not supported, bypass needed for external links)
 [ ] readability parser API support
 [ ] add flux store/action (use altjs)
 [ ] basic styling using purecss

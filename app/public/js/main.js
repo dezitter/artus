@@ -1,14 +1,38 @@
+import origin from './origin';
 import router from '../../router';
+
+const LEFT_BUTTON = 1;
+
+function getAnchor(el) {
+    while (el) {
+        if (el.nodeName === 'A') {
+            return el;
+        }
+
+        el = el.parentElement;
+    }
+}
+
+function isLeftClick(event) {
+    return event.which === LEFT_BUTTON
+    &&     !event.ctrlKey
+    &&     !event.metaKey
+    &&     !event.shiftKey;
+}
+
+function isSameOrigin(anchor) {
+    return (anchor.origin === origin);
+}
 
 // intercept anchor clicks and dispatch to router
 document.addEventListener('click', function(event) {
-    if (event.target.nodeName === 'A') {
+    const anchor = getAnchor(event.target);
+
+    if (anchor && isSameOrigin(anchor) && isLeftClick(event)) {
+        const href = anchor.attributes.href.value;
+
         event.preventDefault();
-
-        let anchor = event.target;
-        let route = anchor.attributes.href.value;
-
-        router.setRoute(route);
+        router.setRoute(href);
     }
 });
 
