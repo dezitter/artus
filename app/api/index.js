@@ -3,7 +3,7 @@ import urlBuilder from './url-builder';
 
 function Api() {}
 
-['get'].forEach(function(method) {
+['get', 'post'].forEach(function(method) {
     Api.prototype[method] = function(url) {
         return request[method]( urlBuilder(url) );
     };
