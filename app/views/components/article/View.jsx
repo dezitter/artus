@@ -9,7 +9,7 @@ class ArticleView extends React.Component {
                 <a href={this.props.article.url}>
                     <span>Original article</span>
                 </a>
-                <div>{this.props.article.content}</div>
+                <div dangerouslySetInnerHTML={{ __html: this.props.article.content }} />
             </div>
         );
     }

@@ -5,8 +5,11 @@
 [x] article form to add a single article by url
 [x] remove hardcoded fake articles list
 [x] fix click hijacker (ctrl/shift/meta + click broken, nested elements not supported, bypass needed for external links)
-[ ] readability parser API support
+[x] readability parser API support
 [x] add flux store/action (use altjs)
+[ ] limit home page articles list length
+[ ] sort home page articles list by adte_added
+[ ] exclude article content from /articles listing
 [ ] hand off store's state from server to client
 [ ] basic styling using purecss
 
