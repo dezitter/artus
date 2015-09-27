@@ -9,7 +9,7 @@
 [x] add flux store/action (use altjs)
 [x] limit home page articles list length
 [x] sort home page articles list by adte_added
-[ ] exclude article content from /articles listing
+[x] exclude article content from /articles listing
 [ ] hand off store's state from server to client
 [ ] basic styling using purecss
 
