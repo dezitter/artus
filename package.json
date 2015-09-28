@@ -16,9 +16,9 @@
   ],
   "author": "Laurent Dezitter <laurent.dezitter@gmail.com>",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/dezitter/artus.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dezitter/artus.git"
   },
   "dependencies": {
     "alt": "^0.17.3",
@@ -42,6 +42,7 @@
     "gulp": "^3.9.0",
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.0.4",
+    "gulp-sass": "^2.0.4",
     "gulp-util": "^3.0.6",
     "watchify": "^3.4.0"
   },

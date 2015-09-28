@@ -23,7 +23,7 @@
 
 ## Styling
 
-- [ ] add main stylesheet based on SCSS
+- [x] add main stylesheet based on SCSS
  - [ ] add SCSS watcher
 
 # Improvements
