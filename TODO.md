@@ -24,7 +24,7 @@
 ## Styling
 
 - [x] add main stylesheet based on SCSS
- - [ ] add SCSS watcher
+ - [x] add SCSS watcher
 
 # Improvements
 
