@@ -23,7 +23,7 @@ class PaginatedList extends React.Component {
         let total = Math.ceil(this.props.articles.length / this.props.limit);
 
         return (
-            <div>
+            <div className="article-list-paginated">
                 <ListComponent
                     articles={this.state.articles} />
 

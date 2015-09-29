@@ -1,8 +1,24 @@
+@import 'variables';
+
+@import 'menu';
+@import 'article/form';
+@import 'article/list';
+
 html {
     font-size: 1em;
     line-height: 1.4;
 }
 
+body {
+    background-color: $background-color;
+}
+
 #content {
-    padding: 1em 1em;
+    margin: 15px 20%;
+}
+
+@media only screen and (max-width : 480px) {
+    #content {
+        margin: 1em 1em;
+    }
 }

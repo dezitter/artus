@@ -22,12 +22,15 @@ class LayoutComponent extends React.Component {
                     <link rel="stylesheet" href="/css/main.css" />
                 </head>
                 <body>
-                    <MenuComponent
-                        title={'Artus'}
-                        items={MENU_ITEMS} />
+                    <div
+                        id="menu">
+                        <MenuComponent
+                            title={'Artus'}
+                            items={MENU_ITEMS} />
+                    </div>
+
                     <div
                         id="content"
-                        className="pure-g"
                         dangerouslySetInnerHTML={ {__html: this.props.content} }>
                     </div>
                     <script src="/js/bundle.js"></script>

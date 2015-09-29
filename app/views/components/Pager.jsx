@@ -7,7 +7,7 @@ class Pager extends React.Component {
         const isLast = (this.props.current === this.props.total);
 
         return (
-            <div>
+            <div className="pager">
                 <button
                     type="button"
                     className="pure-button"

@@ -1,0 +1,24 @@
+.article-list-item {
+    h4 {
+        margin: 0;
+    }
+
+    padding: 10px 0 15px 0;
+    border-bottom: 1px solid $article-list-item-border-color;
+}
+
+.article-title {
+    color: $article-title-color;
+    text-decoration: none;
+}
+
+.article-tools {
+    float: right;
+}
+
+.article-list-paginated {
+    .pager {
+        margin-top: 1em;
+        float: right;
+    }
+}

@@ -16,6 +16,9 @@
 - [ ] add tagging support
  - [ ] filter by tags on listing page
 
+- [ ] add user authentication support
+ - see [passport](https://github.com/jaredhanson/passport)
+
 ## External
 
 - [ ] create a bookmark saving button

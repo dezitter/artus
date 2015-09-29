@@ -23,12 +23,16 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div className="pure-u-1">
-                <AddArticleForm />
+            <div className="pure-g">
+                <div className="pure-u-1">
+                    <AddArticleForm />
+                </div>
 
-                <ArticleListComponent
-                    articles={this.state.articles}
-                />
+                <div className="pure-u-1">
+                    <ArticleListComponent
+                        articles={this.state.articles}
+                    />
+                </div>
             </div>
         );
     }

@@ -1,0 +1,12 @@
+#menu {
+    background-color: $menu-color;
+}
+
+.pure-menu-link {
+    color: $menu-link-color;
+
+    &:hover, &:focus {
+        color: $menu-color;
+        background-color: $background-color;;
+    }
+}

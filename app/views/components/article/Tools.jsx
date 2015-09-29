@@ -6,7 +6,7 @@ class ArticleTools extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="article-tools">
                 <button
                     type="button"
                     className="pure-button"

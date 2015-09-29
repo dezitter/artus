@@ -13,7 +13,7 @@ class Menu extends React.Component {
 
         return (
             <div className="pure-menu pure-menu-horizontal">
-                <span class="pure-menu-heading pure-menu-link">{this.props.title}</span>
+                <a href="#" className="pure-menu-heading pure-menu-link">{this.props.title}</a>
                 <ul className="pure-menu-list">{items}</ul>
             </div>
         );
