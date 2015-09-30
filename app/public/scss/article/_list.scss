@@ -12,6 +12,11 @@
     text-decoration: none;
 }
 
+.article-time-since-added {
+    color: $article-time-since-added-color;
+    margin: 0 10px;
+}
+
 .article-tools {
     float: right;
 }

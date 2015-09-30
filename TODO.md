@@ -6,7 +6,7 @@
  - [x] with pagination
  - [ ] searchable (search within title, url)
 
-- [ ] "xxx days ago" in listing and on View page
+- [x] "xxx days ago" in listing and on View page
 
 - [ ] validate urls (input[type=url], /^http/)
 
