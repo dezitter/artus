@@ -1,40 +1,22 @@
 import React from 'react';
 
 import PaginatedArticleListComponent from '../components/article/PaginatedList';
+
 import ArticleStore from '../../alt/stores/Article';
+import StoreDecorator from '../decorators/Store';
 
-class HomePage extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = ArticleStore.getState();
-        this.onStoreChange = this.onStoreChange.bind(this);
-    }
-
-    componentDidMount() {
-        ArticleStore.listen(this.onStoreChange);
-    }
-
-    componentWillUnmount() {
-        ArticleStore.unlisten(this.onStoreChange);
-    }
+class ArticlesPage extends React.Component {
 
     render() {
         return (
             <div className="pure-u-1">
                 <PaginatedArticleListComponent
                     limit={10}
-                    articles={this.state.articles}
+                    articles={this.props.articles}
                 />
             </div>
         );
     }
-
-    onStoreChange() {
-        this.setState( ArticleStore.getState() );
-    }
-
 }
 
-export default HomePage;
+export default StoreDecorator(ArticlesPage, ArticleStore);

@@ -33,7 +33,7 @@
 
 - [ ] handle errors
 
-- [ ] refactor home & articles pages
+- [x] refactor home & articles pages
 
 - [ ] when fully fetching an article, add its content to listing (the content is excluded on initial listing)
  - [ ] then when viewing an article, see if its content is available in store already, and avoid fetch

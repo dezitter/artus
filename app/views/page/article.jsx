@@ -2,6 +2,9 @@ import React from 'react';
 
 import ArticleViewComponent from '../components/article/View';
 
+import ArticleStore from '../../alt/stores/Article';
+import StoreDecorator from '../decorators/Store';
+
 class ArticlePage extends React.Component {
 
     render() {
@@ -16,4 +19,4 @@ class ArticlePage extends React.Component {
 
 }
 
-export default ArticlePage;
+export default StoreDecorator(ArticlePage, ArticleStore);

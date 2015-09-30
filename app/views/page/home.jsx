@@ -2,24 +2,11 @@ import React from 'react';
 
 import AddArticleForm from '../components/article/form/Add';
 import ArticleListComponent from '../components/article/List';
+
 import ArticleStore from '../../alt/stores/Article';
+import StoreDecorator from '../decorators/Store';
 
 class HomePage extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = ArticleStore.getState();
-        this.onStoreChange = this.onStoreChange.bind(this);
-    }
-
-    componentDidMount() {
-        ArticleStore.listen(this.onStoreChange);
-    }
-
-    componentWillUnmount() {
-        ArticleStore.unlisten(this.onStoreChange);
-    }
 
     render() {
         return (
@@ -30,17 +17,13 @@ class HomePage extends React.Component {
 
                 <div className="pure-u-1">
                     <ArticleListComponent
-                        articles={this.state.articles}
+                        articles={this.props.articles}
                     />
                 </div>
             </div>
         );
     }
 
-    onStoreChange() {
-        this.setState( ArticleStore.getState() );
-    }
-
 }
 
-export default HomePage;
+export default StoreDecorator(HomePage, ArticleStore);
