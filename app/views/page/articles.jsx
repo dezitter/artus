@@ -11,8 +11,7 @@ class ArticlesPage extends React.Component {
         return (
             <div className="pure-u-1">
                 <PaginatedArticleListComponent
-                    limit={10}
-                    articles={this.props.articles}
+                    {...this.props}
                 />
             </div>
         );

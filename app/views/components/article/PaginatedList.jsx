@@ -3,44 +3,33 @@ import React from 'react';
 import ListComponent from './List';
 import PagerComponent from '../Pager';
 
+import ArticleActions from '../../../alt/actions/Article';
+
 class PaginatedList extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = { current: 1 };
-        this.state.articles = this.getArticlesSlice(this.state.current);
-    }
-
-    getArticlesSlice(page) {
-        let start = (page - 1) * this.props.limit;
-        let end = page * this.props.limit;
+    getArticlesPage(page) {
+        let start = (page - 1) * this.props.pager.limit;
+        let end = page * this.props.pager.limit;
 
         return this.props.articles.slice(start, end);
     }
 
     render() {
-        let total = Math.ceil(this.props.articles.length / this.props.limit);
+        const articles = this.getArticlesPage(this.props.pager.current);
+        const total = Math.ceil(this.props.articles.length / this.props.pager.limit);
 
         return (
             <div className="article-list-paginated">
                 <ListComponent
-                    articles={this.state.articles} />
+                    articles={articles} />
 
                 <PagerComponent
                     total={total}
-                    current={this.state.current}
-                    handlePrevious={() => this.update(this.state.current - 1)}
-                    handleNext={() => this.update(this.state.current + 1)} />
+                    current={this.props.pager.current}
+                    handlePrevious={() => ArticleActions.updatePage(this.props.pager.current - 1)}
+                    handleNext={() => ArticleActions.updatePage(this.props.pager.current + 1)} />
             </div>
         );
-    }
-
-    update(page) {
-        this.setState({
-            current: page,
-            articles: this.getArticlesSlice(page)
-        });
     }
 }
 

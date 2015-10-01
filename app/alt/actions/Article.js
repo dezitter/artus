@@ -20,6 +20,10 @@ class ArticleActions {
     get(payload) {
         return api.get(`/article/${payload._id}`);
     }
+
+    updatePage(page) {
+        return page;
+    }
 }
 
 wrapPromiseAll(ArticleActions);

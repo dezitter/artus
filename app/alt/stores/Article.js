@@ -6,12 +6,17 @@ class ArticleStore {
     constructor() {
         this.article = null;
         this.articles = [];
+        this.pager = {
+            current: 1,
+            limit: 10
+        };
 
         this.bindListeners({
             handleAddArticle: ArticleActions.ADD,
             handleDelArticle: ArticleActions.DEL,
             handleFetchArticles: ArticleActions.FETCH,
-            handleGetArticle: ArticleActions.GET
+            handleGetArticle: ArticleActions.GET,
+            handleUpdatePage: ArticleActions.UPDATE_PAGE
         });
     }
 
@@ -34,6 +39,10 @@ class ArticleStore {
 
     handleGetArticle(article) {
         this.article = article;
+    }
+
+    handleUpdatePage(page) {
+        this.pager.current = page;
     }
 }
 
