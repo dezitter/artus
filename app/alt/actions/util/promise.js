@@ -1,22 +1,16 @@
 import { Promise } from 'es6-promise';
 
 function wrapRequest(request) {
-    const promise = new Promise(function(resolve, reject) {
-        request.end(function(err, res) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(res.body);
-            }
+    return Promise.resolve(request)
+        .then(function(res) {
+            const result = (res && res.body) || res;
+
+            this.dispatch(result);
+
+            return result;
+        }.bind(this), function(err) {
+            console.error(err);
         });
-    });
-
-    promise.then(
-        result => { this.dispatch(result); },
-        error => { console.error(error); }
-    );
-
-    return promise;
 }
 
 export function wrapPromiseAll(ActionClass) {
