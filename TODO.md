@@ -4,9 +4,11 @@
 
 - [x] listing all articles
  - [x] with pagination
- - [ ] searchable (search within title, url)
+ - [x] searchable (search within title, url)
 
 - [x] "xxx days ago" in listing and on View page
+
+- [ ] 'back to top' button in View page
 
 - [ ] validate urls (input[type=url], /^http/)
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PaginatedArticleListComponent from '../components/article/PaginatedList';
+import FilterablePaginatedListComp from '../components/article/FilterablePaginatedList';
 
 import ArticleStore from '../../alt/stores/Article';
 import StoreDecorator from '../decorators/Store';
@@ -10,7 +10,7 @@ class ArticlesPage extends React.Component {
     render() {
         return (
             <div className="pure-u-1">
-                <PaginatedArticleListComponent
+                <FilterablePaginatedListComp
                     {...this.props}
                 />
             </div>

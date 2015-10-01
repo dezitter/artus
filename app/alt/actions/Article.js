@@ -24,6 +24,10 @@ class ArticleActions {
     updatePage(page) {
         return page;
     }
+
+    filter(text) {
+        return text;
+    }
 }
 
 wrapPromiseAll(ArticleActions);
