@@ -10,7 +10,7 @@
 
 - [ ] 'back to top' button in View page
 
-- [ ] validate urls (input[type=url], /^http/)
+- [x] validate urls (input[type=url], /^http/)
 
 - [ ] add UI config module (limit/page, ...)
  - [ ] fix listing length when adding/removing

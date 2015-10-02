@@ -8,7 +8,7 @@ class AddArticleForm extends React.Component {
         return (
             <form className="pure-form article-add-form" onSubmit={this.onSubmit.bind(this)}>
                 <input
-                    type="text"
+                    type="url"
                     className="pure-input-rounded"
                     ref="urlInput"
                     placeholder="Url..." />
