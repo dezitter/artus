@@ -21,6 +21,7 @@ export default function(componentPath, options, callback) {
     let page = React.createElement(
         LayoutClass, {
             title: options.title,
+            route: options.route,
             content: React.renderToString(component)
         }
     );

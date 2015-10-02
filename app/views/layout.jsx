@@ -20,7 +20,8 @@ class LayoutComponent extends React.Component {
                     <div
                         id="menu">
                         <MenuComponent
-                            title={'Artus'} />
+                            title={'Artus'}
+                            route={this.props.route} />
                     </div>
 
                     <div

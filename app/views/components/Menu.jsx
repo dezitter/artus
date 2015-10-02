@@ -8,16 +8,26 @@ const MENU_ITEMS = [
 class MenuItem extends React.Component {
 
     render() {
+        const itemClassName = `pure-menu-item ${this.props.isActive ? 'pure-menu-selected' : ''}`;
+
         return (
-            <li className="pure-menu-item">
+            <li className={itemClassName}>
                 <a href={this.props.route}
-                   className="pure-menu-link"> {this.props.label} </a>
+                   className="pure-menu-link"
+                   onClick={() => this.props.handleItemClick(this.props.route)}> {this.props.label} </a>
             </li>
         );
     }
 }
 
 class Menu extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = { currentRoute: this.props.route };
+        this.handleItemClick = this.handleItemClick.bind(this);
+    }
 
     render() {
         const items = this.renderMenuItems();
@@ -32,14 +42,22 @@ class Menu extends React.Component {
 
     renderMenuItems() {
         return MENU_ITEMS.map( (item, key) => {
+            const isActive = (this.state.currentRoute === item.route);
+
             return (
                 <MenuItem
                     key={key}
                     route={item.route}
                     label={item.label}
+                    isActive={isActive}
+                    handleItemClick={this.handleItemClick}
                 />
             );
         });
+    }
+
+    handleItemClick(route) {
+        this.setState({ currentRoute: route });
     }
 
 }
