@@ -2,11 +2,6 @@ import React from 'react';
 
 import MenuComponent from './components/Menu';
 
-const MENU_ITEMS = [
-    { route: '/', label: 'Home' },
-    { route: '/articles', label: 'Articles' }
-];
-
 class LayoutComponent extends React.Component {
 
     render() {
@@ -25,8 +20,7 @@ class LayoutComponent extends React.Component {
                     <div
                         id="menu">
                         <MenuComponent
-                            title={'Artus'}
-                            items={MENU_ITEMS} />
+                            title={'Artus'} />
                     </div>
 
                     <div
