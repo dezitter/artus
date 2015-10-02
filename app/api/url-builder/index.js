@@ -1,6 +1,5 @@
-const HOST = process.env.API_HOST;
-const PORT = process.env.API_PORT;
+const { API_HOST, API_PORT } = process.env;
 
 export default function(url) {
-    return `http://${HOST}:${PORT}${url}`;
+    return `http://${API_HOST}:${API_PORT}${url}`;
 }

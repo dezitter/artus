@@ -7,11 +7,10 @@ import jsxEngine from './jsx-engine';
 import router from './router';
 import routerMiddleware from './router/middleware';
 
-const PORT = process.env.PORT;
-const API_PORT = process.env.API_PORT;
+const { PORT, API_PORT } = process.env;
 
-let app = express();
-let debug = Debug('artus');
+const app = express();
+const debug = Debug('artus');
 
 // Application configuration
 app.set('views', __dirname + '/views');

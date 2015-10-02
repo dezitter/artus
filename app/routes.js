@@ -8,7 +8,7 @@ export default {
             .then((articles) => {
                 renderer.call(this, 'page/home', {
                     title: 'Home',
-                    props: { articles: articles }
+                    props: { articles }
                 });
             });
     },
@@ -18,7 +18,7 @@ export default {
             .then((article) => {
                 renderer.call(this, 'page/article', {
                     title: article.title,
-                    props: { article: article }
+                    props: { article }
                 });
            });
     },
@@ -28,7 +28,7 @@ export default {
             .then((articles) => {
                 renderer.call(this, 'page/articles', {
                     title: 'Articles',
-                    props: { articles: articles }
+                    props: { articles }
                 });
             });
     }
