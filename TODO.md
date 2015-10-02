@@ -2,15 +2,7 @@
 
 ## In-app
 
-- [x] listing all articles
- - [x] with pagination
- - [x] searchable (search within title, url)
-
-- [x] "xxx days ago" in listing and on View page
-
 - [ ] 'back to top' button in View page
-
-- [x] validate urls (input[type=url], /^http/)
 
 - [ ] add UI config module (limit/page, ...)
  - [ ] fix listing length when adding/removing
@@ -26,16 +18,9 @@
 - [ ] create a bookmark saving button
 - [ ] firefox/chrome "Add to Artus" item in context menu
 
-## Styling
-
-- [x] add main stylesheet based on SCSS
- - [x] add SCSS watcher
-
 # Improvements
 
 - [ ] handle errors
-
-- [x] refactor home & articles pages
 
 - [ ] when fully fetching an article, add its content to listing (the content is excluded on initial listing)
  - [ ] then when viewing an article, see if its content is available in store already, and avoid fetch
