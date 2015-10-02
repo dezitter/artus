@@ -1,28 +1,5 @@
-import origin from './origin';
 import router from '../../router';
-
-const LEFT_BUTTON = 1;
-
-function getAnchor(el) {
-    while (el) {
-        if (el.nodeName === 'A') {
-            return el;
-        }
-
-        el = el.parentElement;
-    }
-}
-
-function isLeftClick(event) {
-    return event.which === LEFT_BUTTON
-    &&     !event.ctrlKey
-    &&     !event.metaKey
-    &&     !event.shiftKey;
-}
-
-function isSameOrigin(anchor) {
-    return (anchor.origin === origin);
-}
+import { getAnchor, isSameOrigin, isLeftClick } from './util/anchor';
 
 // intercept anchor clicks and dispatch to router
 document.addEventListener('click', function(event) {
