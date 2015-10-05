@@ -1,25 +1,7 @@
 import alt from '../../alt';
-import api from '../../api';
-import { wrapPromiseAll } from './util/promise';
+import ArticleSource from '../sources/Article';
 
 class ArticleActions {
-    add(payload) {
-        return api.post('/article')
-                  .send({ url: payload.url });
-    }
-
-    del(payload) {
-        return api.del(`/article/${payload._id}`);
-    }
-
-    fetch(payload={}) {
-        return api.get('/articles')
-                  .query({ limit: payload.limit });
-    }
-
-    get(payload) {
-        return api.get(`/article/${payload._id}`);
-    }
 
     updatePage(page) {
         return page;
@@ -30,6 +12,18 @@ class ArticleActions {
     }
 }
 
-wrapPromiseAll(ArticleActions);
+// delegate calls to ArticleSource
+['add', 'del', 'fetch', 'get'].forEach(function(name) {
+
+    ArticleActions.prototype[name] = function(payload) {
+        return ArticleSource[name](payload)
+            .then(resp => resp.body)
+            .then((result) => {
+                this.dispatch(result);
+                return result
+            });
+    };
+
+});
 
 export default alt.createActions(ArticleActions);
