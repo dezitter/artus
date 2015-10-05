@@ -28,6 +28,11 @@ class LayoutComponent extends React.Component {
                         id="content"
                         dangerouslySetInnerHTML={ {__html: this.props.content} }>
                     </div>
+
+                    <script
+                        type="text/snapshot"
+                        dangerouslySetInnerHTML={ {__html: this.props.snapshot} }/>
+
                     <script src="/js/bundle.js"></script>
                 </body>
             </html>

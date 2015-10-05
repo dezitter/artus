@@ -22,6 +22,7 @@ export default function(componentPath, options, callback) {
         LayoutClass, {
             title: options.title,
             route: options.route,
+            snapshot: options.snapshot,
             content: React.renderToString(component)
         }
     );
