@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { timeAgo } from '../../../util';
+import { timeAgo } from '../../../util/format';
 import ArticleToolsComponent from './Tools';
 
 class ArticleListItem extends React.Component {
