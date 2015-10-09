@@ -25,7 +25,7 @@
 - [ ] when fully fetching an article, add its content to listing (the content is excluded on initial listing)
  - [ ] then when viewing an article, see if its content is available in store already, and avoid fetch
 
-- [ ] hand off store's state from server to client
+- [x] hand off store's state from server to client
  - [ ] try to avoid refetching on client after bootstrapping
 
 - [ ] follow airbnb/javascript styleguide

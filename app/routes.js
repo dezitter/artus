@@ -1,43 +1,44 @@
 import renderer from './router/renderer';
 
-import ArticleActions from './alt/actions/Article';
+import ArticleStore from './alt/stores/Article';
+import ArticleSource from './alt/sources/Article';
+
+function getInitialState(data) {
+    const state = Object.assign(ArticleStore.getInitialState(), data);
+
+    return { 'ArticleStore': state };
+}
 
 export default {
     '/': function() {
-        ArticleActions.fetch({ limit: 10 })
+        ArticleSource.fetch({ limit: 10 })
+            .then(res => res.body)
             .then((articles) => {
                 renderer.call(this, 'page/home', {
                     title: 'Home',
-                    props: { articles },
-                    store: {
-                        'ArticleStore': { articles }
-                    }
+                    store: getInitialState({ articles })
                 });
             });
     },
 
     '/article/:id': function(id) {
-        ArticleActions.get({ _id: id })
+        ArticleSource.get({ _id: id })
+            .then(res => res.body)
             .then((article) => {
                 renderer.call(this, 'page/article', {
                     title: article.title,
-                    props: { article },
-                    store: {
-                        'ArticleStore': { article }
-                    }
+                    store: getInitialState({ article })
                 });
-           });
+            });
     },
 
     '/articles': function() {
-        ArticleActions.fetch()
+        ArticleSource.fetch()
+            .then(res => res.body)
             .then((articles) => {
                 renderer.call(this, 'page/articles', {
                     title: 'Articles',
-                    props: { articles },
-                    store: {
-                        'ArticleStore': { articles }
-                    }
+                    store: getInitialState({ articles })
                 });
             });
     }

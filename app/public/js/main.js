@@ -1,19 +1,10 @@
-import React from 'react';
-
 import router from '../../router';
-import location from './global/location';
+import bootstrapStore from './bootstrap/store';
+import bootstrapMenu from './bootstrap/menu';
 import { getAnchor, isSameOrigin, isLeftClick } from './util/anchor';
 
-import MenuComponent from '../../views/components/Menu';
-
-// bootstrap menu
-React.render(
-    React.createElement(MenuComponent, {
-        title: 'Artus',
-        route: location.pathname
-    }),
-    document.getElementById('menu')
-);
+bootstrapStore();
+bootstrapMenu();
 
 // intercept anchor clicks and dispatch to router
 document.addEventListener('click', function(event) {
