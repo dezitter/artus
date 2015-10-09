@@ -17,10 +17,9 @@ class ArticleActions {
 
     ArticleActions.prototype[name] = function(payload) {
         return ArticleSource[name](payload)
-            .then(resp => resp.body)
             .then((result) => {
                 this.dispatch(result);
-                return result
+                return result;
             });
     };
 

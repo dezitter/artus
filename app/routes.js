@@ -12,7 +12,6 @@ function getInitialState(data) {
 export default {
     '/': function() {
         ArticleSource.fetch({ limit: 10 })
-            .then(res => res.body)
             .then((articles) => {
                 renderer.call(this, 'page/home', {
                     title: 'Home',
@@ -23,7 +22,6 @@ export default {
 
     '/article/:id': function(id) {
         ArticleSource.get({ _id: id })
-            .then(res => res.body)
             .then((article) => {
                 renderer.call(this, 'page/article', {
                     title: article.title,
@@ -34,7 +32,6 @@ export default {
 
     '/articles': function() {
         ArticleSource.fetch()
-            .then(res => res.body)
             .then((articles) => {
                 renderer.call(this, 'page/articles', {
                     title: 'Articles',
