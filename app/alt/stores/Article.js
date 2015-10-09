@@ -1,36 +1,40 @@
 import alt from '../../alt';
 import ArticleActions from '../actions/Article';
 
-class ArticleStore {
-
-    constructor() {
-        this.article = null;
-        this.articles = [];
-
-        this.pager = {
+function getInitialState() {
+    return {
+        article: null,
+        articles: [],
+        pager: {
             current: 1,
             limit: 10
-        };
-
-        this.filter = {
+        },
+        filter: {
             text: ''
-        };
+        }
+    };
+}
 
+class ArticleStore {
+    constructor() {
+        Object.assign(this, getInitialState());
+
+        this.exportPublicMethods({ getInitialState });
         this.bindListeners({
-            handleAddArticle: ArticleActions.ADD,
-            handleDelArticle: ArticleActions.DEL,
-            handleFetchArticles: ArticleActions.FETCH,
-            handleGetArticle: ArticleActions.GET,
-            handleUpdatePage: ArticleActions.UPDATE_PAGE,
-            handleFilter: ArticleActions.FILTER
+            onAdd       : ArticleActions.ADD,
+            onDel       : ArticleActions.DEL,
+            onFetch     : ArticleActions.FETCH,
+            onGet       : ArticleActions.GET,
+            onUpdatePage: ArticleActions.UPDATE_PAGE,
+            onFilter    : ArticleActions.FILTER
         });
     }
 
-    handleAddArticle(article) {
+    onAdd(article) {
         this.articles = [article].concat(this.articles);
     }
 
-    handleDelArticle(article) {
+    onDel(article) {
         const articles = [...this.articles];
         const index = articles.find(a => (a._id === article._id));
 
@@ -39,23 +43,17 @@ class ArticleStore {
         this.articles = articles;
     }
 
-    handleFetchArticles(articles) {
-        this.articles = articles;
+    onFetch(articles) { this.articles = articles; }
+
+    onGet(article) { this.article = article; }
+
+    onUpdatePage(page) {
+        this.pager = Object.assign({}, this.pager, { current: page });
     }
 
-    handleGetArticle(article) {
-        this.article = article;
-    }
-
-    handleUpdatePage(page) {
-        this.pager.current = page;
-    }
-
-    handleFilter(text) {
-        this.pager.current = 1;
-        this.filter = {
-            text: text
-        };
+    onFilter(text) {
+        this.getInstance().onUpdatePage.call(this, 1);
+        this.filter = Object.assign({}, this.filter, { text: text });
     }
 }
 
