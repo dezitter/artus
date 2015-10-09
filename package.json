@@ -46,6 +46,9 @@
     "gulp-util": "^3.0.6",
     "watchify": "^3.4.0"
   },
+  "babel": {
+      "optional": ["es7.decorators"]
+  },
   "browser": {
     "./app/router/index.js": "./app/router/client.js",
     "./app/router/renderer/index.js": "./app/router/renderer/client.js",
