@@ -1,6 +1,8 @@
 import alt from '../../alt';
 
-export default function(page, options) {
+export default function(error, page, options={}) {
+    if (error) { return this.next(error); }
+
     const snapshot = JSON.stringify(options.store);
 
     alt.bootstrap(snapshot);

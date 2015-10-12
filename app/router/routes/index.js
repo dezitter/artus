@@ -20,13 +20,11 @@ function createHandler(pattern) {
 
         callHandler(handler, ...rest)
             .then((options={}) => {
-                renderer.call(
-                    this,
-                    specs.page,
-                    Object.assign({}, specs.options, options)
-                );
+                options = Object.assign({}, specs.options, options);
+
+                renderer.call(this, null, specs.page, options);
             })
-            .catch(error => console.error(error.stack));
+            .catch(error => renderer.call(this, error));
     };
 }
 

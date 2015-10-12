@@ -13,7 +13,7 @@
 
 # Improvements
 
-- [ ] handle errors
+- [x] handle errors
 
 - [x] hand off store's state from server to client
  - [ ] avoid fetch on client after bootstrapping if data available in store

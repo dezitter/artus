@@ -2,7 +2,9 @@ import express from 'express';
 import Debug from 'debug';
 
 import api from '../lib/api';
-import apiMiddleware from './api-middleware';
+import apiMiddleware from './middlewares/api';
+import logErrorMiddleware from './middlewares/log-error';
+import errorMiddleware from './middlewares/error';
 import jsxEngine from './jsx-engine';
 import router from './router';
 import routerMiddleware from './router/middleware';
@@ -20,6 +22,8 @@ app.engine('jsx', jsxEngine);
 app.use( express.static(__dirname + '/../dist') );
 app.use('/api', apiMiddleware );
 app.use( routerMiddleware(router) );
+app.use( logErrorMiddleware );
+app.use( errorMiddleware );
 
 app.listen(PORT, () => debug(`Server listening on port ${PORT}`));
 api.listen(API_PORT, () => debug(`Api listening on port ${API_PORT}`));
