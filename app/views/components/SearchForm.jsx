@@ -24,9 +24,9 @@ class SearchForm extends React.Component {
         event.preventDefault();
     }
 
-    onChange(event) {
+    onChange() {
         const input = React.findDOMNode(this.refs.searchInput);
-        const value = input.value.trim();
+        const value = input.value;
 
         this.props.onChange(value);
     }

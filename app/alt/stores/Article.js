@@ -52,7 +52,7 @@ class ArticleStore {
     }
 
     onFilter(text) {
-        this.getInstance().onUpdatePage.call(this, 1);
+        this.onUpdatePage.call(this, 1);
         this.filter = Object.assign({}, this.filter, { text: text });
     }
 }
