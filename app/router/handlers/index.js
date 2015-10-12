@@ -12,7 +12,7 @@ const handlers = {
 
     '/': function() {
         return ArticleSource
-            .fetch({ limit: 10 })
+            .fetch()
             .then((articles) => {
                 return { store: getState({ articles }) };
             });

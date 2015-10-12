@@ -3,7 +3,7 @@ import ArticleAction from '../../alt/actions/Article';
 const handlers = {
 
     '/': function() {
-        return ArticleAction.fetch({ limit: 10 });
+        return ArticleAction.fetch();
     },
 
     '/article/:id': function(_id) {

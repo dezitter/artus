@@ -2,7 +2,7 @@
 
 ## In-app
 
-- [ ] fix listing length when adding/removing
+- [x] fix listing length when adding/removing
 - [ ] add tagging support
 - [ ] add user authentication ([passport](https://github.com/jaredhanson/passport))
 

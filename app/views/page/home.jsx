@@ -6,9 +6,13 @@ import ArticleListComponent from '../components/article/List';
 import ArticleStore from '../../alt/stores/Article';
 import StoreDecorator from '../decorators/Store';
 
+const LIST_LIMIT = 10;
+
 class HomePage extends React.Component {
 
     render() {
+        const articles = this.props.articles.slice(0, LIST_LIMIT);
+
         return (
             <div className="pure-g">
                 <div className="pure-u-1">
@@ -17,7 +21,7 @@ class HomePage extends React.Component {
 
                 <div className="pure-u-1">
                     <ArticleListComponent
-                        articles={this.props.articles}
+                        articles={articles}
                     />
                 </div>
             </div>
