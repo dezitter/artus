@@ -14,9 +14,19 @@ class ArticleList extends React.Component {
             );
         });
 
-        return (
-            <div className="article-list">{items}</div>
-        );
+        if (items.length === 0) {
+            return (
+                <div className="article-list">
+                    <div className="panel info">
+                        The list is empty.
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="article-list">{items}</div>
+            );
+        }
     }
 
 }
