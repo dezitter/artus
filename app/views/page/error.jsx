@@ -6,7 +6,7 @@ class ErrorPage extends React.Component {
         return (
             <div className="pure-g">
                 <div className="pure-u-1">
-                    <p>An error occured !</p>
+                    <div className="panel error">An error occured !</div>
                 </div>
             </div>
         );
