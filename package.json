@@ -51,6 +51,7 @@
   },
   "browser": {
     "./app/router/index.js": "./app/router/client.js",
+    "./app/router/handlers/index.js": "./app/router/handlers/client.js",
     "./app/router/renderer/index.js": "./app/router/renderer/client.js",
     "./app/api/url-builder/index.js": "./app/api/url-builder/client.js"
   },

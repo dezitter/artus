@@ -1,5 +1,5 @@
 import director from 'director';
-import routes from '../routes';
+import routes from './routes';
 
 const _routes = {};
 Object.keys(routes)
