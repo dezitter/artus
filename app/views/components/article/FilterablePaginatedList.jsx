@@ -39,11 +39,17 @@ class FilterablePaginatedList extends React.Component {
                 <ListComponent
                     articles={paginatedArticles} />
 
-                <PagerComponent
-                    total={total}
-                    current={this.props.pager.current}
-                    handlePrevious={() => ArticleActions.updatePage(this.props.pager.current - 1)}
-                    handleNext={() => ArticleActions.updatePage(this.props.pager.current + 1)} />
+                {(() => {
+                    if (paginatedArticles.length !== 0) {
+                        return (
+                            <PagerComponent
+                                total={total}
+                                current={this.props.pager.current}
+                                handlePrevious={() => ArticleActions.updatePage(this.props.pager.current - 1)}
+                                handleNext={() => ArticleActions.updatePage(this.props.pager.current + 1)} />
+                        );
+                    }
+                })()}
             </div>
         );
     }
