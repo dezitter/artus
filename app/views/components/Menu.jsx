@@ -1,24 +1,11 @@
 import React from 'react';
 
+import MenuItem from './MenuItem';
+
 const MENU_ITEMS = [
     { route: '/'        , label: 'Home' },
     { route: '/articles', label: 'Articles' }
 ];
-
-class MenuItem extends React.Component {
-
-    render() {
-        const itemClassName = `pure-menu-item ${this.props.isActive ? 'pure-menu-selected' : ''}`;
-
-        return (
-            <li className={itemClassName}>
-                <a href={this.props.route}
-                   className="pure-menu-link"
-                   onClick={() => this.props.handleItemClick(this.props.route)}> {this.props.label} </a>
-            </li>
-        );
-    }
-}
 
 class Menu extends React.Component {
 
