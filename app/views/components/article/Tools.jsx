@@ -7,10 +7,9 @@ class ArticleTools extends React.Component {
     render() {
         return (
             <div className="article-tools">
-                <button
-                    type="button"
-                    className="pure-button"
-                    onClick={this.onDelete.bind(this)}>Delete</button>
+                <div
+                    className="del-button"
+                    onClick={this.onDelete.bind(this)} />
             </div>
         );
     }

@@ -3,3 +3,11 @@
     border-color: $border-color;
     color: $text-color;
 }
+
+@mixin button-tool($icon-url, $size) {
+    cursor: pointer;
+    background: $icon-url center center no-repeat;
+    background-size: $size;
+    width: $size;
+    height: $size;
+}

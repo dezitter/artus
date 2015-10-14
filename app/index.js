@@ -20,6 +20,7 @@ app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine);
 
 app.use( express.static(__dirname + '/../dist') );
+app.use( express.static(__dirname + '/../assets') );
 app.use('/api', apiMiddleware );
 app.use( routerMiddleware(router) );
 app.use( logErrorMiddleware );

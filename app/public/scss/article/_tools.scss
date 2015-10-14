@@ -1,0 +1,3 @@
+.del-button {
+    @include button-tool($bin-icon-url, $tool-button-size);
+}
