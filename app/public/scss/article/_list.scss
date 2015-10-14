@@ -5,6 +5,12 @@
 
     padding: 10px 0 15px 0;
     border-bottom: 1px solid $article-list-item-border-color;
+
+    &:hover {
+        .article-tools {
+            display: block;
+        }
+    }
 }
 
 .article-title {
@@ -19,6 +25,7 @@
 
 .article-tools {
     float: right;
+    display: none;
 }
 
 .article-list-paginated {
