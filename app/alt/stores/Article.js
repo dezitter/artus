@@ -31,29 +31,30 @@ class ArticleStore {
     }
 
     onAdd(article) {
-        this.articles = [article].concat(this.articles);
+        this.articles.unshift(article);
     }
 
     onDel(article) {
-        const articles = [...this.articles];
-        const index = articles.findIndex(a => (a._id === article._id));
+        const index = this.articles.findIndex(a => (a._id === article._id));
 
-        articles.splice(index, 1);
+        this.articles.splice(index, 1);
+    }
 
+    onFetch(articles) {
         this.articles = articles;
     }
 
-    onFetch(articles) { this.articles = articles; }
-
-    onGet(article) { this.article = article; }
+    onGet(article) {
+        this.article = article;
+    }
 
     onUpdatePage(page) {
-        this.pager = Object.assign({}, this.pager, { current: page });
+        this.pager.current = page;
     }
 
     onFilter(text) {
+        this.filter.text = text;
         this.onUpdatePage.call(this, 1);
-        this.filter = Object.assign({}, this.filter, { text: text });
     }
 }
 
