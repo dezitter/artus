@@ -26,8 +26,14 @@ class ArticleStore {
             onFetch     : ArticleActions.FETCH,
             onGet       : ArticleActions.GET,
             onUpdatePage: ArticleActions.UPDATE_PAGE,
-            onFilter    : ArticleActions.FILTER
+            onFilter    : ArticleActions.FILTER,
+            onTagging   : ArticleActions.TOGGLE_TAGGING,
+            onSetTags   : ArticleActions.SET_TAGS
         });
+    }
+
+    findIndex(_id) {
+        return this.articles.findIndex(article => (article._id === _id));
     }
 
     onAdd(article) {
@@ -35,8 +41,7 @@ class ArticleStore {
     }
 
     onDel(article) {
-        const index = this.articles.findIndex(a => (a._id === article._id));
-
+        const index = this.findIndex(article._id);
         this.articles.splice(index, 1);
     }
 
@@ -55,6 +60,21 @@ class ArticleStore {
     onFilter(text) {
         this.filter.text = text;
         this.onUpdatePage.call(this, 1);
+    }
+
+    onTagging(params) {
+        const { article, tagging } = params;
+
+        this.articles.forEach(function(current) {
+            const isSelected = (current._id === article._id);
+            current.tagging = isSelected ? tagging : false;
+        });
+    }
+
+    onSetTags(article) {
+        const index = this.findIndex(article._id);
+
+        this.articles[index] = article;
     }
 }
 

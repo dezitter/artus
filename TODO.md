@@ -3,7 +3,8 @@
 ## In-app
 
 - [x] fix listing length when adding/removing
-- [ ] add tagging support
+- [x] add tagging support
+ - [ ] search by tag
 - [ ] add user authentication ([passport](https://github.com/jaredhanson/passport))
 
 ## External

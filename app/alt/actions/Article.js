@@ -10,10 +10,17 @@ class ArticleActions {
     filter(text) {
         return text;
     }
+
+    toggleTagging(article) {
+        return {
+            article,
+            tagging: !article.tagging
+        };
+    }
 }
 
 // delegate calls to ArticleSource
-['add', 'del', 'fetch', 'get'].forEach(function(name) {
+['add', 'del', 'fetch', 'get', 'setTags'].forEach(function(name) {
 
     ArticleActions.prototype[name] = function(payload) {
         return ArticleSource[name](payload)

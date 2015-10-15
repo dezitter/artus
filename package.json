@@ -47,7 +47,10 @@
     "watchify": "^3.4.0"
   },
   "babel": {
-      "optional": ["es7.decorators"]
+      "optional": [
+          "es7.decorators",
+          "es7.classProperties"
+      ]
   },
   "browser": {
     "./app/router/index.js": "./app/router/client.js",

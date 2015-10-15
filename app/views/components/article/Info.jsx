@@ -2,6 +2,9 @@ import React from 'react';
 
 import { timeAgo } from '../../../util/format';
 
+import ArticleActions from '../../../alt/actions/Article';
+import TagListComponent from '../TagList';
+
 class Info extends React.Component {
 
     render() {
@@ -15,8 +18,22 @@ class Info extends React.Component {
                 <span className="article-time-since-added">
                     {`(Added ${timeAgoStr})`}
                 </span>
+                <TagListComponent
+                    tags={this.props.article.tags}
+                    editing={this.props.article.tagging}
+                    handleSubmit={this.handleTagsSubmit.bind(this)}/>
             </div>
         );
+    }
+
+    handleTagsSubmit(tags) {
+        tags = tags.split(/ *, */)
+                   .filter(tag => (tag !== ''));
+
+        ArticleActions.setTags({
+            tags,
+            _id: this.props.article._id
+        });
     }
 
 }

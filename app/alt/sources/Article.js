@@ -28,6 +28,13 @@ class ArticleSource {
     get(payload) {
         return api.get(`/article/${payload._id}`);
     }
+
+    @extractBody
+    @promisify
+    setTags(payload) {
+        return api.post(`/article/${payload._id}/tags`)
+                  .send({ tags: payload.tags || [] });
+    }
 }
 
 export default new ArticleSource();

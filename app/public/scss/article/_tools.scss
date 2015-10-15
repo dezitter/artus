@@ -1,3 +1,11 @@
+.tool-button {
+    display: inline-block;
+}
+
 .del-button {
     @include button-tool($bin-icon-url, $tool-button-size);
+}
+
+.tag-button {
+    @include button-tool($tag-icon-url, $tool-button-size);
 }
