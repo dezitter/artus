@@ -1,8 +1,8 @@
 import React from 'react';
 
+import InputComponent from '../Input';
 import ListComponent from './List';
 import PagerComponent from '../Pager';
-import SearchFormComponent from '../SearchForm';
 
 import ArticleActions from '../../../alt/actions/Article';
 
@@ -32,9 +32,11 @@ class FilterablePaginatedList extends React.Component {
 
         return (
             <div className="article-list-paginated">
-                <SearchFormComponent
-                    onChange={(text) => ArticleActions.filter(text)}
-                    text={this.props.filter.text} />
+                <InputComponent
+                    placeholder="Search..."
+                    inputClassName="pure-input-1"
+                    value={this.props.filter.text}
+                    handleChange={(text) => ArticleActions.filter(text)} />
 
                 <ListComponent
                     articles={paginatedArticles} />

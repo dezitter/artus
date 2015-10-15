@@ -1,37 +1,40 @@
 import React from 'react';
 
+import InputComponent from '../../Input';
 import ArticleActions from '../../../../alt/actions/Article';
 
 class AddArticleForm extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = { url:'' };
+    }
+
     render() {
         return (
-            <form className="pure-form article-add-form" onSubmit={this.onSubmit.bind(this)}>
-                <input
-                    type="url"
-                    className="pure-input-rounded"
-                    ref="urlInput"
-                    placeholder="Url..." />
+            <InputComponent
+                type="url"
+                placeholder="Url..."
+                value={this.state.url}
+                formClassName="article-add-form"
+                handleSubmit={this.onSubmit.bind(this)}>
 
                 <button
                     type="submit"
-                    className="pure-button pure-button-primary article-add-button">Add</button>
-            </form>
+                    className="pure-button pure-button-primary article-add-button">
+                        Add
+                </button>
+            </InputComponent>
         );
     }
 
-    onSubmit(event) {
-        event.preventDefault();
-        const input = React.findDOMNode(this.refs.urlInput);
-        const value = input.value.trim();
-
-        if (value) {
-            ArticleActions.add({
-                url: value
-            });
+    onSubmit(url) {
+        if (url) {
+            ArticleActions.add({ url });
         }
 
-        input.value = '';
+        this.setState({ url: '' });
     }
 
 }
