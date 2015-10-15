@@ -36,7 +36,7 @@ class ArticleStore {
 
     onDel(article) {
         const articles = [...this.articles];
-        const index = articles.find(a => (a._id === article._id));
+        const index = articles.findIndex(a => (a._id === article._id));
 
         articles.splice(index, 1);
 
