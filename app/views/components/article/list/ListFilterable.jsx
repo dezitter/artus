@@ -5,15 +5,17 @@ import InputComponent from '../../shared/Input';
 import ListComponent from './List';
 import PagerComponent from '../../shared/Pager';
 
-/* Actions, Stores */
+/* Utils */
+import strutil from '../../../../util/string';
+
+/* Actions */
 import ArticleActions from '../../../../alt/actions/Article';
 
 function filterArticles(articles, query='') {
-    query = query.toLowerCase();
+    const words = strutil.words(query);
 
-    return articles.filter(a => {
-        return a.title.toLowerCase()
-                      .indexOf(query) !== -1;
+    return articles.filter((article) => {
+        return strutil.contains(article.title, words);
     });
 }
 
