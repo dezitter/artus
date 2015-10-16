@@ -34,6 +34,14 @@ class Input extends React.Component {
         );
     }
 
+    componentDidMount() {
+        const input = React.findDOMNode(this.refs.input);
+        const length = this.state.value.length;
+
+        input.focus();
+        input.setSelectionRange(length, length);
+    }
+
     componentWillReceiveProps(props) {
         this.setState({ value: props.value });
     }

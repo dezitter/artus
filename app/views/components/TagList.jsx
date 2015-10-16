@@ -19,7 +19,7 @@ class TagList extends React.Component {
             );
         }
 
-        return ( <div>{content}</div>);
+        return (<div>{content}</div>);
     }
 
 }
