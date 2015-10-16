@@ -9,9 +9,13 @@ class MenuItem extends React.Component {
             <li className={itemClassName}>
                 <a href={this.props.route}
                    className="pure-menu-link"
-                   onClick={() => this.props.handleItemClick(this.props.route)}> {this.props.label} </a>
+                   onClick={this.onClick.bind(this)}> {this.props.label} </a>
             </li>
         );
+    }
+
+    onClick() {
+        this.props.handleItemClick(this.props.route);
     }
 }
 

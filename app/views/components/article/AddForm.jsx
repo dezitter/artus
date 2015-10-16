@@ -1,17 +1,21 @@
 import React from 'react';
 
-import InputComponent from '../../Input';
-import ArticleActions from '../../../../alt/actions/Article';
+/* Components */
+import InputComponent from '../shared/Input';
+
+/* Actions */
+import ArticleActions from '../../../alt/actions/Article';
 
 class AddArticleForm extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.state = { url:'' };
+        this.state = { url: '' };
     }
 
     render() {
+        const addBtnClassName = 'pure-button pure-button-primary article-add-button';
+
         return (
             <InputComponent
                 type="url"
@@ -22,19 +26,17 @@ class AddArticleForm extends React.Component {
 
                 <button
                     type="submit"
-                    className="pure-button pure-button-primary article-add-button">
-                        Add
-                </button>
+                    className={addBtnClassName}> Add </button>
+
             </InputComponent>
         );
     }
 
     onSubmit(url) {
         if (url) {
-            ArticleActions.add({ url });
+            ArticleActions.add({ url })
+                .then(() => { this.setState({ url: '' }); });
         }
-
-        this.setState({ url: '' });
     }
 
 }

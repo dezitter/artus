@@ -1,11 +1,9 @@
 import React from 'react';
 
-import MenuItem from './MenuItem';
+/* Components */
+import MenuItem from './Item';
 
-const MENU_ITEMS = [
-    { route: '/'        , label: 'Home' },
-    { route: '/articles', label: 'Articles' }
-];
+import Sections from './sections';
 
 class Menu extends React.Component {
 
@@ -17,28 +15,27 @@ class Menu extends React.Component {
     }
 
     render() {
-        const items = this.renderMenuItems();
+        const sections = this.renderMenuSections();
 
         return (
-            <div className="pure-menu pure-menu-horizontal">
+            <div id="menu" className="pure-menu pure-menu-horizontal">
                 <a href="#" className="pure-menu-heading pure-menu-link">{this.props.title}</a>
-                <ul className="pure-menu-list">{items}</ul>
+                <ul className="pure-menu-list">{sections}</ul>
             </div>
         );
     }
 
-    renderMenuItems() {
-        return MENU_ITEMS.map( (item, key) => {
-            const isActive = (this.state.currentRoute === item.route);
+    renderMenuSections() {
+        return Sections.map((section, key) => {
+            const isActive = (this.state.currentRoute === section.url);
 
             return (
                 <MenuItem
                     key={key}
-                    route={item.route}
-                    label={item.label}
+                    route={section.url}
+                    label={section.name}
                     isActive={isActive}
-                    handleItemClick={this.handleItemClick}
-                />
+                    handleItemClick={this.handleItemClick} />
             );
         });
     }

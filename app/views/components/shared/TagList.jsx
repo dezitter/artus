@@ -1,5 +1,6 @@
 import React from 'react';
 
+/* Components */
 import InputComponent from './Input';
 
 class TagList extends React.Component {

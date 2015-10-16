@@ -1,6 +1,7 @@
 import React from 'react';
 
-import ArticleActions from '../../../alt/actions/Article';
+/* Components */
+import ArticleActions from '../../../../../alt/actions/Article';
 
 class ArticleTools extends React.Component {
 

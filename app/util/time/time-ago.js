@@ -2,7 +2,7 @@ function format(interval, timeOffset) {
     return `${interval} ${timeOffset}(s) ago`;
 }
 
-function timeAgo(date) {
+export default function timeAgo(date) {
     let interval;
     const seconds = Math.floor((new Date() - date) / 1000);
 
@@ -23,5 +23,3 @@ function timeAgo(date) {
 
     return format(interval, 'second');
 }
-
-export { timeAgo };

@@ -26,8 +26,7 @@ class Input extends React.Component {
                     className={inputClassName}
                     value={this.state.value}
                     placeholder={this.props.placeholder}
-                    onChange={this.onChange}
-                />
+                    onChange={this.onChange} />
 
                 {this.props.children}
             </form>
@@ -52,17 +51,13 @@ class Input extends React.Component {
 
         this.setState({ value });
 
-        if (this.props.handleChange) {
-            this.props.handleChange(value);
-        }
+        if (this.props.handleChange) this.props.handleChange(value);
     }
 
     onSubmit(event) {
         event.preventDefault();
 
-        if (this.props.handleSubmit) {
-            this.props.handleSubmit(this.state.value);
-        }
+        if (this.props.handleSubmit) this.props.handleSubmit(this.state.value);
     }
 }
 

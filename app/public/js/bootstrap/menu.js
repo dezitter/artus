@@ -1,7 +1,7 @@
 import React from 'react';
 
 import location from '../global/location';
-import MenuComponent from '../../../views/components/Menu';
+import MenuComponent from '../../../views/components/menu/Menu';
 
 export default function() {
     React.render(

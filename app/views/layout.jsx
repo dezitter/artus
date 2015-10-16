@@ -1,6 +1,7 @@
 import React from 'react';
 
-import MenuComponent from './components/Menu';
+/* Components */
+import MenuComponent from './components/menu/Menu';
 
 class LayoutComponent extends React.Component {
 
@@ -13,27 +14,21 @@ class LayoutComponent extends React.Component {
                     <title>{this.props.title}</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-                    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+                    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.6.0/pure-min.css" />
                     <link rel="stylesheet" href="/css/main.css" />
                 </head>
                 <body>
-                    <div
-                        id="menu">
-                        <MenuComponent
-                            title={'Artus'}
-                            route={this.props.route} />
-                    </div>
+                    <MenuComponent
+                        title={'Artus'}
+                        route={this.props.route} />
 
-                    <div
-                        id="content"
-                        dangerouslySetInnerHTML={ {__html: this.props.content} }>
-                    </div>
+                    <div id="content"
+                         dangerouslySetInnerHTML={ {__html: this.props.content} } />
 
-                    <script
-                        type="text/snapshot"
-                        dangerouslySetInnerHTML={ {__html: this.props.snapshot} }/>
+                    <script type="text/snapshot"
+                            dangerouslySetInnerHTML={ {__html: this.props.snapshot} } />
 
-                    <script src="/js/bundle.js"></script>
+                    <script src="/js/bundle.js" />
                 </body>
             </html>
         );

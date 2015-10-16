@@ -1,7 +1,8 @@
 import React from 'react';
 
-import AddArticleForm from '../components/article/form/Add';
-import ArticleListComponent from '../components/article/List';
+/* Components */
+import AddFormComponent from '../components/article/AddForm';
+import ListComponent from '../components/article/list/List';
 
 import ArticleStore from '../../alt/stores/Article';
 import StoreDecorator from '../decorators/Store';
@@ -16,13 +17,11 @@ class HomePage extends React.Component {
         return (
             <div className="pure-g">
                 <div className="pure-u-1">
-                    <AddArticleForm />
+                    <AddFormComponent />
                 </div>
 
                 <div className="pure-u-1">
-                    <ArticleListComponent
-                        articles={articles}
-                    />
+                    <ListComponent articles={articles} />
                 </div>
             </div>
         );
