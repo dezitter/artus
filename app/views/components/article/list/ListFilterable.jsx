@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 
 /* Components */
@@ -6,24 +7,23 @@ import ListComponent from './List';
 import PagerComponent from '../../shared/Pager';
 
 /* Utils */
-import strutil from '../../../../util/string';
+import { filterByTitle, filterByTags } from '../../../../util/filter/article';
 
 /* Actions */
 import ArticleActions from '../../../../alt/actions/Article';
-
-function filterArticles(articles, query='') {
-    const words = strutil.words(query);
-
-    return articles.filter((article) => {
-        return strutil.contains(article.title, words);
-    });
-}
 
 function paginateArticles(articles, pager) {
     const start = (pager.current - 1) * pager.limit;
     const end = pager.current * pager.limit;
 
     return articles.slice(start, end);
+}
+
+function filterArticles(articles, text) {
+    const byTitle = filterByTitle(articles, text);
+    const byTags = filterByTags(articles, text);
+
+    return _.union(byTitle, byTags);
 }
 
 class FilterablePaginatedList extends React.Component {

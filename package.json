@@ -34,6 +34,7 @@
     "es6-promise": "^3.0.2",
     "express": "^4.13.3",
     "http-proxy": "^1.11.2",
+    "lodash": "^3.10.1",
     "nedb": "^1.2.1",
     "react": "^0.13.3",
     "superagent": "^1.4.0",
