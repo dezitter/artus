@@ -2,6 +2,8 @@
 
 A simple web-based application to save articles and read them later.
 
+![Demo](/resources/demo.gif)
+
 # How to run
 
 Install [Node.js](https://nodejs.org)
@@ -15,3 +17,5 @@ $ npm install
 $ cp .env.example .env
 $ npm run start
 ```
+
+Go to [localhost:3000](http://localhost:3000/)
